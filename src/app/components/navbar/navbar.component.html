@@ -1,0 +1,27 @@
+<header class="sticky top-0 z-50 border-b border-white/50 bg-white/70 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <a routerLink="/" class="flex items-center gap-3 text-lg font-semibold tracking-[0.2em] text-slate-900 dark:text-white">
+      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-fuchsia-500 text-sm font-bold text-white">GM</span>
+      <span>Gulam Mohammad</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 text-sm font-medium md:flex">
+      <a *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="text-cyan-600 dark:text-cyan-400" [routerLinkActiveOptions]="{ exact: true }" class="transition hover:text-cyan-600 dark:hover:text-cyan-400">{{ link.label }}</a>
+    </nav>
+
+    <div class="hidden items-center gap-3 md:flex">
+      <a routerLink="/contact" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200">Hire Me</a>
+      <a href="https://example.com/resume.pdf" target="_blank" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-600 dark:bg-cyan-600 dark:hover:bg-cyan-500">Resume</a>
+    </div>
+
+    <button type="button" class="rounded-full border border-slate-300 p-2 text-slate-700 md:hidden dark:border-slate-700 dark:text-slate-200" (click)="toggleMenu()">
+      <span class="text-xl">☰</span>
+    </button>
+  </div>
+
+  <div *ngIf="isMenuOpen" class="border-t border-white/50 bg-white/90 p-4 backdrop-blur-xl md:hidden dark:border-slate-800 dark:bg-slate-950/90">
+    <div class="flex flex-col gap-3">
+      <a *ngFor="let link of links" [routerLink]="link.path" (click)="isMenuOpen = false" class="rounded-2xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">{{ link.label }}</a>
+    </div>
+  </div>
+</header>

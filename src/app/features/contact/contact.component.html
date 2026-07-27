@@ -1,0 +1,41 @@
+<section class="px-4 py-20 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="rounded-[2.5rem] border border-white/70 bg-slate-950 p-8 text-white shadow-[0_30px_100px_rgba(15,23,42,0.22)] dark:border-slate-800 sm:p-10">
+      <p class="text-sm uppercase tracking-[0.35em] text-cyan-400">Contact</p>
+      <h1 class="mt-4 text-4xl font-semibold">Let’s build something exceptional.</h1>
+      <p class="mt-5 text-lg leading-8 text-slate-300">Whether you need a premium frontend build, a redesign, or a fast-moving product launch, I’d love to hear about it.</p>
+      <div class="mt-8 space-y-4 text-sm text-slate-300">
+        <p><i class="fas fa-envelope mr-3 text-cyan-400"></i>{{ personalInfo.email }}</p>
+        <p><i class="fas fa-phone mr-3 text-cyan-400"></i>{{ personalInfo.phone }}</p>
+        <p><i class="fas fa-map-marker-alt mr-3 text-cyan-400"></i>{{ personalInfo.location }}</p>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank" rel="noreferrer" class="rounded-full border border-slate-700 px-4 py-2 text-sm text-slate-200 transition hover:border-cyan-500 hover:text-cyan-400">{{ link.label }}</a>
+      </div>
+    </div>
+
+    <div class="rounded-[2.5rem] border border-white/70 bg-white/70 p-8 shadow-[0_30px_100px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70 sm:p-10">
+      <form (ngSubmit)="submit()" class="space-y-5">
+        <div class="grid gap-5 sm:grid-cols-2">
+          <label class="block">
+            <span class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Name</span>
+            <input [(ngModel)]="form.name" name="name" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none ring-0 transition focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-950" required />
+          </label>
+          <label class="block">
+            <span class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Email</span>
+            <input [(ngModel)]="form.email" name="email" type="email" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none ring-0 transition focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-950" required />
+          </label>
+        </div>
+        <label class="block">
+          <span class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Subject</span>
+          <input [(ngModel)]="form.subject" name="subject" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none ring-0 transition focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-950" required />
+        </label>
+        <label class="block">
+          <span class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Message</span>
+          <textarea [(ngModel)]="form.message" name="message" rows="6" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none ring-0 transition focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-950" required></textarea>
+        </label>
+        <button type="submit" class="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600 dark:bg-cyan-600 dark:hover:bg-cyan-500">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
