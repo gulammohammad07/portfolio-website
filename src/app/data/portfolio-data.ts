@@ -14,7 +14,7 @@ export const personalInfo = {
   location: 'Mumbai, Maharashtra, India',
   email: 'gulammohd8080@gmail.com',
   phone: '+91-8408830377',
-  tagline: 'Motivated Frontend Developer with 8–9 months of hands-on experience in Angular, Spartacus, TypeScript, and responsive UI development.',
+  tagline: 'Motivated Frontend Developer with 9–10 months of hands-on experience in Angular, Spartacus, TypeScript, and responsive UI development.',
   resumeUrl: 'mailto:gulammohd8080@gmail.com?subject=Resume%20Request',
   profileImage: 'photo/profile.jpeg',
   aboutImage: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80'
@@ -50,8 +50,8 @@ export const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=900&q=80',
     tech: ['HTML', 'CSS', 'JavaScript', 'OpenWeather API'],
     features: ['Live weather search', 'Responsive UI', 'Dynamic updates'],
-    github: '#',
-    live: '#',
+    github: 'https://github.com/gulammohammad07/weatherAppByJs',
+    live: '',
     date: 'Jan 2026'
   },
   {
@@ -63,8 +63,8 @@ export const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80',
     tech: ['Angular', 'TypeScript', 'RxJS', 'JSON Server'],
     features: ['Reusable components', 'Routing guards', 'Real-time state handling'],
-    github: '#',
-    live: '#',
+    github: 'https://github.com/gulammohammad07/MdPerfumesProject',
+    live: 'https://mdperdfumes.netlify.app',
     date: 'Jan 2026'
   },
   {
@@ -76,8 +76,8 @@ export const projects: Project[] = [
     image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80',
     tech: ['Angular', 'Spartacus', 'SCSS', 'TypeScript'],
     features: ['Component overrides', 'Responsive UI', 'Commerce frontend improvements'],
-    github: '#',
-    live: '#',
+    github: '',
+    live: '',
     date: '2025'
   }
 ];
@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
 
 export const stats = [
   { label: 'Projects built', value: '3' },
-  { label: 'Frontend experience', value: '8–9 months' },
+  { label: 'Frontend experience', value: '9–10 months' },
   { label: 'Certifications', value: '6' },
   { label: 'Core stack', value: 'Angular + Spartacus' }
 ];

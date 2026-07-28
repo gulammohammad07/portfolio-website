@@ -1,179 +1,101 @@
-<section class="relative isolate overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,0.25),_transparent_35%),radial-gradient(circle_at_bottom_left,_rgba(232,121,249,0.2),_transparent_35%)]"></div>
-  <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+<section
+  class="relative isolate overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+>
+  <div
+    class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,0.25),_transparent_35%),radial-gradient(circle_at_bottom_left,_rgba(232,121,249,0.2),_transparent_35%)]"
+  ></div>
+
+  <div
+    class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]"
+  >
+    <!-- Left Content -->
     <div>
-      <p class="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-700 dark:text-cyan-300">Open to frontend developer roles and growth opportunities</p>
-      <h1 class="mt-8 text-4xl font-semibold leading-tight text-slate-900 sm:text-6xl lg:text-7xl dark:text-white">I’m a fresher <span class="bg-gradient-to-r from-cyan-500 to-fuchsia-500 bg-clip-text text-transparent">Frontend Developer</span> building responsive Angular and Spartacus experiences.</h1>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">{{ personalInfo.tagline }}</p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a routerLink="/contact" class="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600 dark:bg-cyan-600 dark:hover:bg-cyan-500">Hire Me</a>
-        <a [href]="personalInfo.resumeUrl" target="_blank" class="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200">Download Resume</a>
-        <a routerLink="/projects" class="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200">View Projects</a>
+      <!-- Badge -->
+      <p
+        #badge
+        class="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-700 dark:text-cyan-300"
+      >
+        Open to frontend developer roles and growth opportunities
+      </p>
+
+      <!-- Heading -->
+      <h1
+        #heading
+        class="mt-8 text-4xl font-semibold leading-tight text-slate-900 sm:text-6xl lg:text-7xl dark:text-white"
+      >
+        I’m a experienced
+
+        <span
+          class="bg-gradient-to-r from-cyan-500 to-fuchsia-500 bg-clip-text text-transparent"
+        >
+          Frontend Developer
+        </span>
+
+        building responsive Angular and Spartacus experiences.
+      </h1>
+
+      <!-- Tagline -->
+      <p
+        #tagline
+        class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300"
+      >
+        {{ personalInfo.tagline }}
+      </p>
+
+      <!-- Buttons -->
+      <div #buttons class="mt-8 flex flex-wrap gap-4">
+        <a
+          routerLink="/contact"
+          class="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600 dark:bg-cyan-600 dark:hover:bg-cyan-500"
+        >
+          Hire Me
+        </a>
+
+        <a
+          [href]="personalInfo.resumeUrl"
+          target="_blank"
+          class="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200"
+        >
+          Download Resume
+        </a>
+
+        <a
+          routerLink="/projects"
+          class="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200"
+        >
+          View Projects
+        </a>
       </div>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a *ngFor="let link of socialLinks" [href]="link.href" target="_blank" rel="noreferrer" class="rounded-full border border-slate-200 bg-white/70 p-3 text-slate-700 shadow-sm transition hover:-translate-y-1 hover:text-cyan-600 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300">
+
+      <!-- Social Icons -->
+      <div #social class="mt-8 flex flex-wrap gap-4">
+        <a
+          *ngFor="let link of socialLinks"
+          [href]="link.href"
+          target="_blank"
+          rel="noreferrer"
+          class="rounded-full border border-slate-200 bg-white/70 p-3 text-slate-700 shadow-sm transition hover:-translate-y-1 hover:text-cyan-600 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300"
+        >
           <i [class]="link.icon"></i>
         </a>
       </div>
     </div>
+
+    <!-- Right Content -->
     <div class="relative">
-      <div class="absolute inset-0 -translate-x-6 translate-y-8 rounded-[2rem] bg-gradient-to-br from-cyan-400/30 to-fuchsia-400/30 blur-3xl"></div>
-      <div class="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-4 shadow-[0_40px_120px_rgba(15,23,42,0.16)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70">
-        <img [src]="personalInfo.profileImage" [alt]="personalInfo.name" class="h-[480px] w-full rounded-[1.5rem] object-cover" />
-      </div>
-    </div>
-  </div>
-</section>
+      <div
+        class="absolute inset-0 -translate-x-6 translate-y-8 rounded-[2rem] bg-gradient-to-br from-cyan-400/30 to-fuchsia-400/30 blur-3xl"
+      ></div>
 
-<section id="about" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="About" title="A fresher frontend developer with practical project experience and a strong foundation in Angular." description="I combine hands-on learning with frontend craftsmanship to build responsive interfaces, solve UI challenges, and keep improving with every project."></app-section-heading>
-    <div class="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-      <div class="rounded-[2rem] border border-white/70 bg-white/70 p-8 shadow-[0_25px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70">
-        <p class="text-lg leading-8 text-slate-600 dark:text-slate-300">I’m a frontend developer with 8–9 months of practical experience in Angular, Spartacus, TypeScript, and responsive UI development. I enjoy turning design ideas into clean, user-friendly web experiences and continuing to grow in modern frontend technologies.</p>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2">
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/70">
-            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Location</p>
-            <p class="mt-2 font-semibold text-slate-900 dark:text-white">{{ personalInfo.location }}</p>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/70">
-            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Email</p>
-            <p class="mt-2 font-semibold text-slate-900 dark:text-white">{{ personalInfo.email }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div *ngFor="let stat of stats" class="rounded-[2rem] border border-white/70 bg-gradient-to-br from-cyan-500/10 to-fuchsia-500/10 p-6 shadow-[0_20px_50px_rgba(15,23,42,0.06)] backdrop-blur-xl">
-          <p class="text-3xl font-semibold text-slate-900 dark:text-white">{{ stat.value }}</p>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">{{ stat.label }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="Skills" title="A modern stack with a premium feel." description="I work across the full frontend spectrum from product architecture and component systems to visual polish and interaction design."></app-section-heading>
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <div *ngFor="let group of skills" class="rounded-[2rem] border border-white/70 bg-white/70 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70">
-        <h3 class="text-xl font-semibold text-slate-900 dark:text-white">{{ group.title }}</h3>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span *ngFor="let item of group.items" class="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-950/70 dark:text-slate-300">{{ item }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="Services" title="High-end frontend services for ambitious brands." description="Every engagement is shaped around clarity, quality, and an experience that feels effortless at every breakpoint."></app-section-heading>
-    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      <div *ngFor="let service of services" class="rounded-[2rem] border border-white/70 bg-white/70 p-8 shadow-[0_20px_50px_rgba(15,23,42,0.06)] backdrop-blur-xl transition hover:-translate-y-2 hover:shadow-[0_25px_80px_rgba(8,145,178,0.16)] dark:border-slate-800 dark:bg-slate-900/70">
-        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-fuchsia-500 text-lg text-white"><i [class]="service.icon"></i></div>
-        <h3 class="mt-6 text-xl font-semibold text-slate-900 dark:text-white">{{ service.title }}</h3>
-        <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ service.description }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="Projects" title="Selected work that balances storytelling and engineering." description="These projects reflect my focus on polished interfaces, thoughtful product thinking, and performance-oriented execution."></app-section-heading>
-    <div class="mt-12 grid gap-6 lg:grid-cols-3">
-      <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card>
-    </div>
-  </div>
-</section>
-
-<section id="experience" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="Experience" title="Building products with a product mindset." description="Past roles have shaped my ability to ship polished interfaces and solve product problems with clarity."></app-section-heading>
-    <div class="mt-12 space-y-6">
-      <div *ngFor="let item of experience" class="rounded-[2rem] border border-white/70 bg-white/70 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70">
-        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p class="text-lg font-semibold text-slate-900 dark:text-white">{{ item.role }} · {{ item.company }}</p>
-            <p class="mt-2 text-sm text-slate-500">{{ item.period }}</p>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span *ngFor="let stack of item.stack" class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-300">{{ stack }}</span>
-          </div>
-        </div>
-        <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ item.description }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="education" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="Education" title="A strong foundation in engineering and design." description="My education helped shape my software instincts, product thinking, and visual craftsmanship."></app-section-heading>
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-      <div *ngFor="let item of education" class="rounded-[2rem] border border-white/70 bg-white/70 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70">
-        <p class="text-sm uppercase tracking-[0.3em] text-cyan-600">{{ item.year }}</p>
-        <h3 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">{{ item.degree }}</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">{{ item.school }}</p>
-        <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ item.detail }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="certificates" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="Certificates" title="Continual learning keeps the craft sharp." description="I stay current with modern tools, frontend architecture, and design systems through focused study."></app-section-heading>
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <div *ngFor="let cert of certificates" class="rounded-[2rem] border border-white/70 bg-white/70 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70">
-        <p class="text-sm uppercase tracking-[0.3em] text-cyan-600">{{ cert.year }}</p>
-        <h3 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">{{ cert.title }}</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">{{ cert.issuer }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="testimonials" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="Testimonials" title="Trusted by founders and product teams." description="The quality of my work is reflected in the way clients describe the experience of working with me."></app-section-heading>
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <div *ngFor="let testimonial of testimonials" class="rounded-[2rem] border border-white/70 bg-white/70 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70">
-        <p class="text-amber-500">★★★★★</p>
-        <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">“{{ testimonial.quote }}”</p>
-        <p class="mt-6 font-semibold text-slate-900 dark:text-white">{{ testimonial.author }}</p>
-        <p class="text-sm text-slate-500">{{ testimonial.role }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="blog" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <app-section-heading eyebrow="Blog" title="Writing on interface craft and modern frontend development." description="I write about performance, interaction design, and thoughtful systems that make digital products feel premium."></app-section-heading>
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-      <div *ngFor="let post of blogPosts" class="rounded-[2rem] border border-white/70 bg-white/70 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70">
-        <p class="text-sm uppercase tracking-[0.3em] text-cyan-600">{{ post.date }}</p>
-        <h3 class="mt-3 text-xl font-semibold text-slate-900 dark:text-white">{{ post.title }}</h3>
-        <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ post.excerpt }}</p>
-        <a [href]="post.href" class="mt-6 inline-flex text-sm font-semibold text-cyan-600">Read more →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl rounded-[2.5rem] border border-white/70 bg-slate-950 p-8 text-white shadow-[0_30px_100px_rgba(15,23,42,0.25)] sm:p-10 lg:p-14">
-    <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-      <div class="max-w-2xl">
-        <p class="text-sm uppercase tracking-[0.35em] text-cyan-400">Available for work</p>
-        <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">I’m open to frontend developer opportunities, internships, and growing through real-world projects.</h2>
-        <p class="mt-4 text-lg text-slate-300">Let’s build something useful and polished together.</p>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        <a routerLink="/contact" class="rounded-full bg-cyan-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-500">Hire Me</a>
-        <a href="mailto:hello@daniel.dev" class="rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-500 hover:text-cyan-400">Let’s Talk</a>
+      <div
+        #profile
+        class="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-4 shadow-[0_40px_120px_rgba(15,23,42,0.16)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70"
+      >
+        <img
+          [src]="personalInfo.profileImage"
+          [alt]="personalInfo.name"
+          class="h-[480px] w-full rounded-[1.5rem] object-cover"
+        />
       </div>
     </div>
   </div>
