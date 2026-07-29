@@ -15,7 +15,7 @@ export const personalInfo = {
   email: 'gulammohd8080@gmail.com',
   phone: '+91-8408830377',
   tagline: 'Motivated Frontend Developer with 9–10 months of hands-on experience in Angular, Spartacus, TypeScript, and responsive UI development.',
-  resumeUrl: '/public/Gulam_Resume.pdf',
+  resumeUrl: 'public/Gulam_Resume.pdf',
   profileImage: 'photo/profile.jpeg',
   aboutImage: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80'
 };

@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class ResumeService {
   downloadResume() {
-    window.open('/public/Gulam_Resume.pdf', '_blank');
+    window.open('/Gulam_Resume.pdf', '_blank');
   }
 }
