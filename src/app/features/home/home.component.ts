@@ -28,12 +28,7 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    SectionHeadingComponent,
-    ProjectCardComponent,
-  ],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
