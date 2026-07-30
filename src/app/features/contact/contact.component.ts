@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { personalInfo, socialLinks } from '../../data/portfolio-data';
 import { ContactService } from '../../core/services/contact.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-page',
@@ -14,6 +15,8 @@ import { ContactService } from '../../core/services/contact.service';
 })
 export class ContactComponent {
   private contactService = inject(ContactService);
+
+  isSubmitting = false;
 
   personalInfo = personalInfo;
   socialLinks = socialLinks;
@@ -28,12 +31,18 @@ export class ContactComponent {
   };
 
   submit() {
-    console.log('Form Data:', this.form);
+    this.isSubmitting = true;
 
     this.contactService.sendMessage(this.form).subscribe({
       next: (res: any) => {
-        console.log(res);
-        alert(res.message);
+        this.isSubmitting = false;
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent!',
+          text: 'Thank you for contacting me. I will get back to you soon.',
+          confirmButtonText: 'Awesome!',
+        });
 
         this.form = {
           full_name: '',
@@ -46,7 +55,15 @@ export class ContactComponent {
       },
 
       error: (err) => {
-        console.log('Error Response:', err.error);
+        this.isSubmitting = false;
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops!',
+          text: 'Something went wrong. Please try again later.',
+          confirmButtonText: 'OK',
+        });
+
         console.error(err);
       },
     });
